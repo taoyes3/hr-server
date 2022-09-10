@@ -22,7 +22,10 @@
     from hr
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    <select id="loadUserByUsername" resultType="com.taoyes3.hr.model.Hr">
+      select * from hr where username = #{usernname}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from hr
     where id = #{id,jdbcType=INTEGER}
   </delete>

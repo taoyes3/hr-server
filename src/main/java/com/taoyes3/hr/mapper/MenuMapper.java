@@ -1,6 +1,9 @@
 package com.taoyes3.hr.mapper;
 
 import com.taoyes3.hr.model.Menu;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface MenuMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +17,6 @@ public interface MenuMapper {
     int updateByPrimaryKeySelective(Menu record);
 
     int updateByPrimaryKey(Menu record);
+
+    List<Menu> getMenusByHrId(Integer hrId);
 }
